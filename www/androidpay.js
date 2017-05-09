@@ -22,6 +22,7 @@ function _buildReverseLookup(flatJSON) {
 }
 
 /**
+ * These constants are mostly an exact copy of their Java's counterparts.
  * @name Constants
  * @type {object} 
  */
@@ -43,6 +44,7 @@ var Constants = {
 		})
 	},
 	/**
+	 * com.google.android.gms.wallet.WalletConstants
 	 * @type {object}
 	 * @memberof Constants
 	 * 
@@ -102,6 +104,7 @@ var Constants = {
 	  METADATA_TAG_WALLET_API_ENABLED: "com.google.android.gms.wallet.api.enabled",
 	}),
 	/**
+	 * com.google.android.gms.common.api.CommonStatusCodes
 	 * @type {object}
 	 *
 	 * @prop {number}	SUCCESS_CACHE
@@ -140,6 +143,7 @@ var Constants = {
 	  DEAD_CLIENT: 18,
 	}),
 	/**
+	 * com.google.android.gms.wallet.WalletConstants.CardNetwork
 	 * @type {object}
 	 * 
 	 * @prop {Number} AMEX
@@ -160,6 +164,7 @@ var Constants = {
 	  OTHER: 1000,
 	}),
 	/**
+	 * com.google.android.gms.wallet.PaymentMethodTokenizationType
 	 * @type {object}
 	 * 	  
 	 * @prop {number} PAYMENT_GATEWAY
@@ -170,6 +175,7 @@ var Constants = {
 	  NETWORK_TOKEN: 2,
 	}),
 	/**
+	 * android.app.Activity
 	 * @type {object}
 	 * @prop {number}	RESULT_CANCELED
 	 * @prop {number}	RESULT_OK
@@ -244,6 +250,7 @@ var isBootstrapped = false;
 /**
  * @namespace
  * @type {Object}
+ * @see {@link https://developers.google.com/android-pay/tutorial|Android Pay (Native) Tutorial}
  * @example
  * var AndroidPay = cordova.plugins.AndroidPay;
  * 
@@ -510,7 +517,8 @@ var AndroidPay = {
 	 * 
 	 * @method
 	 * @param  {Boolean} phoneNumberRequired 
-	 * @return {Promise}             
+	 * @return {Promise}        
+	 * @example     
 	 * cordova.plugins.AndroidPay.setPhoneNumberRequired(true)
 	 * 	.then(function(result) {
 	 * 		console.log(result);

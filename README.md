@@ -1,3 +1,8 @@
+<p align="center">
+	<img src="https://developer.android.com/images/brand/Android_Robot_100.png" height="200">
+	<img src="https://cordova.apache.org/static/img/pluggy.png" height="250">
+</p>
+
 # Android Pay
 For Cordova :gift:
 
@@ -8,6 +13,19 @@ This plugin is a good starting point (and may even be enough) to integrate Andro
 It has originally been created for [Bsit](https://bsit.com/). We ([Togetair](https://togetair.com)) will keep it updated and maintained.
 
 Don't hesitate to make a pull request if you can contribute.
+
+---
+
+## TODOs :rocket:
+- Clean up code
+- Fire events
+	- gAPI errors
+	- gAPI connect
+	- gAPI disconnect
+- Write examples
+- Embed (or make an overlay) the WalletFragment (you should use an image for now)
+- "How to test?" - there is no reliable way to test Android Pay at the moment, at least using Stripe.
+- **Release as a plugin**.
 
 ---
 
@@ -41,6 +59,8 @@ Don't hesitate to make a pull request if you can contribute.
 
 ## Constants
 
+These constants are mostly an exact copy of their Java's counterparts.
+
 ### ACTIONS_RESPONSES
 
 **Properties**
@@ -50,6 +70,8 @@ Don't hesitate to make a pull request if you can contribute.
     -   `MESSAGES.IS_NOT_READY_TO_PAY` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Sent when #isReadyToPay() is not succesfull
 
 ### WalletConstants
+
+com.google.android.gms.wallet.WalletConstants
 
 **Properties**
 
@@ -82,6 +104,8 @@ Don't hesitate to make a pull request if you can contribute.
 
 ### CommonStatusCodes
 
+com.google.android.gms.common.api.CommonStatusCodes
+
 **Properties**
 
 -   `SUCCESS_CACHE` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
@@ -103,6 +127,8 @@ Don't hesitate to make a pull request if you can contribute.
 
 ### CardNetwork
 
+com.google.android.gms.wallet.WalletConstants.CardNetwork
+
 **Properties**
 
 -   `AMEX` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
@@ -115,6 +141,8 @@ Don't hesitate to make a pull request if you can contribute.
 
 ### PaymentMethodTokenizationType
 
+com.google.android.gms.wallet.PaymentMethodTokenizationType
+
 **Properties**
 
 -   `PAYMENT_GATEWAY` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
@@ -122,12 +150,16 @@ Don't hesitate to make a pull request if you can contribute.
 
 ### Activity
 
+android.app.Activity
+
 **Properties**
 
 -   `RESULT_CANCELED` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 -   `RESULT_OK` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 ## AndroidPay
+
+-   **See: [Android Pay (Native) Tutorial](https://developers.google.com/android-pay/tutorial)**
 
 **Examples**
 
@@ -380,13 +412,19 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 -   `phoneNumberRequired` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** cordova.plugins.AndroidPay.setPhoneNumberRequired(true)
+**Examples**
+
+```javascript
+cordova.plugins.AndroidPay.setPhoneNumberRequired(true)
 	.then(function(result) {
 		console.log(result);
 	})
 	.then(function(err) {
 		console.log(err);
 	});
+```
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### bootstrap
 
