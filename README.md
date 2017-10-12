@@ -209,7 +209,7 @@ AndroidPay.setup({
 })
 .then(function(result) {
   console.log(result);
-  return AndroidPay.loadMasketWallet();
+  return AndroidPay.loadMaskedWallet();
 })
 .then(function(tokenizationResult) {
   console.log(tokenizationResult);
